@@ -14,15 +14,13 @@ year = input('Select a year to find statistics (1997 to 2010): ')
 ourlist = []
 keylist = []
 
-# Try key, value pair
-
 # Get the index of the year
 i = thedict['CO2 per capita'].index(year)
 
-for val in thedict:
+for key, value in thedict.items():
     # store the value of index i for each key in ourlist
-    ourlist.append(float(thedict[val][i]))
-    keylist.append(val)
+    ourlist.append(float(value[i]))
+    keylist.append(key)
 
 # Get the index of the maximum and minimum value in ourlist
 a = ourlist.index(max(ourlist[1:]))
