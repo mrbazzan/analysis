@@ -44,10 +44,17 @@ ax.set_xticklabels(thedict['CO2 per capita'], rotation=30, fontsize='small')
 props = {
     'title': 'Year VS Emissions in Capita',
     'xlabel': 'Year',
-    'ylabel': f'Emissions in {country}',
+    'ylabel': f'Emissions in ',  # {country}
 }
 ax.set(**props)
-
 # plot the graph
 plt.plot(list(map(lambda x: float(x), thedict[country])))
+plt.show()
+
+two_country = input('Write two comma-seperated countries for which you want to visualize data: ').title()
+
+# get the two values entered into two seperate variables.
+count_a, count_b = two_country.split(', ')
+plt.plot(list(map(lambda x: float(x), thedict[count_a])))
+plt.plot(list(map(lambda x: float(x), thedict[count_b])))
 plt.show()
